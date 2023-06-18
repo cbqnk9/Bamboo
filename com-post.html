@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>대나무숲</title>
+</head>
+
+<body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container px-5">
+                <a class="navbar-brand" href="index.html"><img src="./assets/favicon.ico"
+                        style="width: 25px;filter: invert(100%);"> 대나무숲</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">홈</a></li>
+                        <li class="nav-item"><a class="nav-link" href="blog-home.html">게시글</a></li>
+                        <li class="nav-item"><a class="nav-link" href="community.html">커뮤니티</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><img src="./assets/user.png"
+                                    style="width: 25px;filter: invert(100%);"></a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                                <li><a class="dropdown-item" href="signIn.html">로그인</a></li>
+                                <li><a class="dropdown-item" href="signUp.html">회원가입</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Blog Post -->
+        <div class="container">
+            <div class="row">
+                <div class="mt-4 col-lg-8 offset-lg-2">
+                    <div class="p-2 post mb-4">
+                        <h2 class="post-title">같이 바이크 타실 분 있으신가요?</h2>
+                        <hr class="sidebar-divider my-0" />
+                        <p class="mt-4 post-content">
+                            안녕하세요! 새로 바이크 입문하게된 바린이입니다.
+                            이제 첫 바이크를 타게 됐는데, 알려주시면서 같이 타실 분 구해요!
+                            바린이라도 좋습니다. 같이 즐기면서 타면 좋을 것 같아서요
+                            <br><img style="width:400px" src="./assets/bike.jpg"><br>
+                            같이 즐겁게 바이크 탔으면 좋겠습니다!
+                        </p>
+                    </div>
+
+
+                    <!-- Comment Form -->
+                    <section>
+                        <div class="card bg-white">
+                            <div class="card-body">
+                                <!-- Comment form-->
+                                <!-- Comment with nested comments-->
+                                <div class="comment">
+                                    <div id="commentSection">
+                                        <div class="d-flex mb-4">
+                                            <!-- Parent comment-->
+                                            <div class="flex-shrink-0"><img class="rounded-circle"
+                                                    src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." />
+                                            </div>
+                                            <div class="ms-3">
+                                                <div class="comment">
+                                                    <p class="fw-bold comment-author">바린이</p>
+                                                    <p class="fw-lighter fs-6 comment-date">2023년 6월 17일</p>
+                                                    <p class="comment-text">안녕하세요! 저도 바린이에요! 같이 바이크 타실래요?</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form id="commentForm">
+                                    <div class="mb-4">
+                                        <label for="commentAuthor" class="form-label">이름</label>
+                                        <input type="text" class="form-control" id="commentAuthor" name="commentAuthor"
+                                            required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="commentText" class="form-label">댓글 내용</label>
+                                        <textarea class="form-control" id="commentText" name="commentText" rows="4"
+                                            required></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="submit" class="btn btn-secondary ">작성하기</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="small m-0 text-white">Copyright &copy; 2023 Web page authoring basics</div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // JavaScript code for comment submission
+            document.addEventListener("DOMContentLoaded", function () {
+                const commentForm = document.querySelector("#commentForm");
+                const commentSection = document.querySelector("#commentSection");
+
+                commentForm.addEventListener("submit", function (event) {
+                    event.preventDefault(); // Prevent form submission
+
+                    // Get form data
+                    const commentAuthor = document.querySelector("#commentAuthor").value;
+                    const commentText = document.querySelector("#commentText").value;
+
+                    // Create a new comment element
+                    const comment = document.createElement("div");
+                    comment.classList.add("comment");
+                    comment.innerHTML = `
+                    <div class="d-flex mb-4">
+                    <div class="flex-shrink-0"><img class="rounded-circle"
+                src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+            <div class="ms-3">
+                    <p class="fw-bold comment-author">${commentAuthor}</p>
+                    <p class="fw-lighter fs-6 comment-date">${formatDate(new Date())}</p>
+                    <p class="comment-text">${commentText}</p>
+        `;
+
+                    // Append the new comment to the comment section
+                    commentSection.appendChild(comment);
+
+                    // Clear form inputs
+                    commentForm.reset();
+                });
+
+                // Helper function to format date as "Month Day, Year"
+                function formatDate(date) {
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    return date.toLocaleDateString(undefined, options);
+                }
+            });
+        </script>
+</body>
+
+</html>
