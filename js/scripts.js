@@ -70,3 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
         return date.toLocaleDateString(undefined, options);
     }
 });
+
+function btn(){
+    alert('로그인이 필요한 서비스입니다.');
+    location.href='signIn.html';
+}
